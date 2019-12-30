@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node  --exec babel-node src/server.js",
     "s:dev": "nodemon --exec babel-node src/server.js",
-    "test": "cross-env NODE_ENV=test jest --testTimeout=2000 "
+    "test": "cross-env NODE_ENV=test jest --testTimeout=2000 ",
+    "test:coverage": "cross-env NODE_ENV=test jest --testTimeout=20000 --coverage"
   },
   "jest": {
     "testEnvironment": "node",
@@ -23,7 +24,9 @@
     "hapi": "^18.1.0",
     "pg": "^7.17.0",
     "supertest": "^4.0.2",
-    "typeorm": "^0.2.22"
+    "typeorm": "^0.2.22",
+    "@hapi/boom": "latest",
+    "@hapi/joi": "latest"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.7",

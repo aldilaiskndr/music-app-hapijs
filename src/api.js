@@ -3,6 +3,7 @@
 import Hapi from "@hapi/hapi";
 import createDBConnection from "./database/connection";
 import configure from "./config";
+import routes from "./routes";
 
 process.on('unhandledRejection', (err) => {
     console.log(err);
@@ -19,7 +20,7 @@ export default async () => {
     // await server.register(require("@hapi/basic"));
     // server.auth.strategy('loginduludong', 'basic', { validate });
     // server.auth.default('loginduludong');
-    // server.route(routes);
+    server.route(routes);
     server.route({
         method: 'GET',
         path: '/',
