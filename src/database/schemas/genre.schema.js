@@ -9,7 +9,7 @@ export const genreSchema = new EntitySchema({
             name:'id_genre',
             primary:true,
             type:'int',
-            generated:'sequence'
+            generated:true
         },
         genreName:{
             name:'genre_name',

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/routes/user.route.js</title>
+    <title>Code coverage report for src/routes/genre.route.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="..\..\prettify.css" />
     <link rel="stylesheet" href="..\..\base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\..\index.html">All files</a> / <a href="index.html">src/routes</a> user.route.js
+      <a href="..\..\index.html">All files</a> / <a href="index.html">src/routes</a> genre.route.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">87.5% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>14/16</span>
+        <span class='fraction'>18/18</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -32,12 +32,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>5/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">87.5% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>14/16</span>
+        <span class='fraction'>18/18</span>
       </div>
     </div>
     <p class="quiet">
@@ -112,14 +112,19 @@
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -133,6 +138,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -149,10 +155,6 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -161,90 +163,103 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {UserService} from "../services";
-import Joi from '@hapi/joi';
-import Boom from '@hapi/boom';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Boom from '@hapi/boom';
+import {GenreService} from '../services';
+import {PATH_GENRE_API} from "../constant/path.constant";
+import {DELETE, GET, POST, PUT} from "../constant/method.constant";
 &nbsp;
-const userService = new UserService();
+const genreService = new GenreService();
 &nbsp;
-const user = [
+const genre = [
     {
-        method: 'GET',
-        path: '/users',
+        method:GET,
+        path: PATH_GENRE_API,
+        config:{
+            handler: async (req, h)=&gt;{
+                return h.payload = await genreService.findAllGenre();
+            }
+        }
+    },
+    {
+        method: GET,
+        path: PATH_GENRE_API+'/{id}',
         config: {
-            auth: false,
             handler: async (req, h) =&gt; {
-                return h.payload = await userService.findAll();
-            }
-        }
-    },
-    {
-        method: 'GET',
-        path: '/users/{id}',
-        handler: async (req, h) =&gt; {
-            try {
-                return h.payload = await userService.findById(req.params.id);
-            } catch (e) {
-                throw Boom.notFound(e.message);
-            }
-        }
-    },
-    {
-        method: 'PUT',
-        path: '/users',
-        config: {
-            auth: false,
-            handler: async function (request, h) {
-                let user = request.payload;
-                console.log(user);
                 try {
-                    user = await userService.create(user);
-                    return h.response(user).code(201);
-                } catch (e) {
-<span class="cstat-no" title="statement not covered" >                    throw Boom.badRequest(e.message);</span>
+                    return h.payload = await genreService.findById(req.params.id);
+                }catch (error) {
+                    throw Boom.notFound(error.message);
                 }
-            },
-            // validate: {
-            //     payload:
-            //         Joi.object({
-            //             username: Joi.string().max(20).min(5).alphanum().required(),
-            //             password: Joi.string().min(5).required(),
-            //         })
-            // }
-        },
-    },
-    {
-        method: 'delete',
-        path: '/users/{id}',
-        handler: async (req, h) =&gt; {
-            try {
-                await userService.deleteUser(req.params.id);
-                return h.response({message: 'Success'}).code(200);
-            } catch (e) {
-<span class="cstat-no" title="statement not covered" >                return Boom.notFound(e.message);</span>
             }
         }
     },
+    {
+        method:PUT,
+        path:PATH_GENRE_API,
+        config:{
+            handler: async (req, h) =&gt;{
+                let genre = req.payload;
+                genre = await genreService.createGenre(genre);
+                return h.response(genre).code(201);
+            }
+        }
+    },
+    {
+        method:POST,
+        path: PATH_GENRE_API,
+        config:{
+            handler: async (req, h)=&gt;{
+                let genre = req.payload;
+                try {
+                    genre = await genreService.updateGenre(genre);
+                    return h.response(genre).code(201);
+                }catch (e) {
+                    throw Boom.notFound(e.message);
+                }
+            }
+        }
+    },
+    {
+        method:DELETE,
+        path:PATH_GENRE_API+'/{id}',
+        config:{
+            handler: async (req, h)=&gt;{
+                try {
+                    await genreService.deleteById(req.params.id);
+                    return h.response({message:'Delete Success'}).code(200)
+                }catch (e) {
+                    throw Boom.notFound(e.message);
+                }
+            }
+        }
+    }
 ];
-&nbsp;
-export default user;</pre></td></tr>
+export default genre;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->

@@ -1,3 +1,3 @@
 import UserService from "./user.sevice";
-
-export {UserService}
+import GenreService from "./genre.service";
+export {UserService, GenreService}
