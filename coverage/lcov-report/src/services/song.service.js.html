@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/api.js</title>
+    <title>Code coverage report for src/services/song.service.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="..\prettify.css" />
-    <link rel="stylesheet" href="..\base.css" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(..\sort-arrow-sprite.png);
+            background-image: url(..\..\sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -16,35 +16,35 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\index.html">All files</a> / <a href="index.html">src</a> api.js
+      <a href="..\..\index.html">All files</a> / <a href="index.html">src/services</a> song.service.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">73.33% </span>
+        <span class="strong">5.88% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>11/15</span>
+        <span class='fraction'>1/17</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>1/2</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">33.33% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/3</span>
+        <span class='fraction'>0/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">73.33% </span>
+        <span class="strong">6.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>11/15</span>
+        <span class='fraction'>1/15</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -90,25 +90,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -116,56 +97,75 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import SongModel from "../models/song.model";
+import {getRepository} from "typeorm";
+import ArtistService from "./artist.service";
 &nbsp;
-import Hapi from "@hapi/hapi";
-import createDBConnection from "./database/connection";
-import configure from "./config";
-import routes from "./routes";
+let artistService = new ArtistService();
 &nbsp;
-process.on('unhandledRejection', <span class="fstat-no" title="function not covered" >(e</span>rr) =&gt; {
-<span class="cstat-no" title="statement not covered" >    console.log(err);</span>
-<span class="cstat-no" title="statement not covered" >    process.exit(1);</span>
-});
-&nbsp;
-export default async () =&gt; {
-    configure();
-    const connection = await createDBConnection();
-    const server = Hapi.server({
-        port: process.env.APP_PORT,
-        host: process.env.APP_HOST
-    });
-    // await server.register(require("@hapi/basic"));
-    // server.auth.strategy('loginduludong', 'basic', { validate });
-    // server.auth.default('loginduludong');
-    server.route(routes);
-    server.route({
-        method: 'GET',
-        path: '/',
-        handler: <span class="fstat-no" title="function not covered" >(r</span>equest, h) =&gt; {
-<span class="cstat-no" title="statement not covered" >            return 'Hello World!';</span>
-        }
-    });
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (connection.isConnected) {
-        await server.start();
-        console.log(`Connected to ${process.env.DB_DRIVER} database at ${process.env.DB_HOST}`);
-        console.log(`Server ${process.env.APP_NAME} running on ${server.info.uri}`);
-    }else {
-<span class="cstat-no" title="statement not covered" >        console.log(`error`);</span>
+export default class SongService {
+<span class="fstat-no" title="function not covered" >    so</span>ngRepository() {
+<span class="cstat-no" title="statement not covered" >        return getRepository(SongModel);</span>
     }
 &nbsp;
-    return server.listener;
+<span class="fstat-no" title="function not covered" >    as</span>ync createSong(song) {
+        const artist = <span class="cstat-no" title="statement not covered" >await artistService.findById(song.artist);</span>
+<span class="cstat-no" title="statement not covered" >        if (!artist) <span class="cstat-no" title="statement not covered" >throw {message: 'Sorry, Artist Not Found', status: 404};</span></span>
+<span class="cstat-no" title="statement not covered" >        song.artist = artist;</span>
+<span class="cstat-no" title="statement not covered" >        return await this.songRepository().save(song);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    as</span>ync findAll() {
+<span class="cstat-no" title="statement not covered" >        return await this.songRepository().find();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    as</span>ync findById(id) {
+        const song = <span class="cstat-no" title="statement not covered" >await this.songRepository().findOne(id);</span>
+<span class="cstat-no" title="statement not covered" >        if (!song) <span class="cstat-no" title="statement not covered" >throw {message: 'Sorry, Song Not Found', status: 404};</span></span>
+<span class="cstat-no" title="statement not covered" >        return song;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    as</span>ync deleteById(id) {
+        const song = <span class="cstat-no" title="statement not covered" >await this.findById(id);</span>
+<span class="cstat-no" title="statement not covered" >        await this.songRepository().delete(song.id);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    as</span>ync updateSong(song){
+        const editableSong = <span class="cstat-no" title="statement not covered" >await this.findById(song.id);</span>
+<span class="cstat-no" title="statement not covered" >        await this.songRepository().merge(editableSong, song);</span>
+<span class="cstat-no" title="statement not covered" >        return await this.songRepository().save(editableSong);</span>
+    }
 }
+&nbsp;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
@@ -175,7 +175,7 @@ export default async () =&gt; {
   generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Dec 31 2019 03:35:29 GMT+0700 (Indochina Time)
 </div>
 </div>
-<script src="..\prettify.js"></script>
+<script src="..\..\prettify.js"></script>
 <script>
 window.onload = function () {
         if (typeof prettyPrint === 'function') {
@@ -183,7 +183,7 @@ window.onload = function () {
         }
 };
 </script>
-<script src="..\sorter.js"></script>
-<script src="..\block-navigation.js"></script>
+<script src="..\..\sorter.js"></script>
+<script src="..\..\block-navigation.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 class GenreModel {
     constructor(idGenre, genreName) {
-        this.id = idGenre;
+        this.idGenre = idGenre;
         this.genreName = genreName;
     }
 }

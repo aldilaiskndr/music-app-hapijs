@@ -17,4 +17,14 @@ export const genreSchema = new EntitySchema({
             nullable:false
         },
     },
+    // relations:{
+    //     artists:{
+    //         target:'ArtistModel',
+    //         type:'one-to-many',
+    //         inverseSide: 'genre',
+    //         joinColumn: true,
+    //         cascade:true,
+    //         eager: false
+    //     }
+    // }
 });
