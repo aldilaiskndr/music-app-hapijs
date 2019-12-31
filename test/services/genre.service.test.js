@@ -1,7 +1,6 @@
 import init from "../../src/api"
 import {GenreService} from "../../src/services/";
 import {deepEqual} from 'assert';
-import genre from "../../src/routes/genre.route";
 
 let server;
 let genreService = new GenreService();

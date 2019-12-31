@@ -11,7 +11,6 @@ class ArtistService {
     async createArtist(artist){
         try {
             artist.genre = await genreService.findById(artist.genre);
-            console.log(artist, "14");
         }catch (e) {
             throw {message:'Sorry, Genre Not Found', status:404}
         }

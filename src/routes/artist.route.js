@@ -2,9 +2,10 @@ import Boom from '@hapi/boom';
 import {ArtistService} from "../services";
 import {DELETE, GET, POST, PUT} from "../constant/method.constant";
 import {PATH_ARTIST_API} from "../constant/path.constant";
+import FileService from "../services/file.service";
 
 const artistService = new ArtistService();
-
+const fileService = new FileService();
 const artist = [
     {
         method: GET,
@@ -31,15 +32,23 @@ const artist = [
     {
         method: PUT,
         path: PATH_ARTIST_API,
-        config: {
-            handler: async (req, h) => {
-                let artist = req.payload;
-                try {
-                    artist = await artistService.createArtist(artist);
-                    return h.response(artist).code(201);
-                } catch (e) {
-                    throw Boom.notFound(e.message);
-                }
+        handler: async (req, h) => {
+            let artist = req.payload.artist;
+            let image = req.payload.image;
+            console.log(artist);
+            try {
+                artist = await artistService.createArtist(JSON.parse(artist));
+                await fileService.savingFile(image, artist.id);
+                return h.response(artist).code(201);
+            } catch (e) {
+                throw Boom.notFound(e.message);
+            }
+        },
+        options:{
+            payload:{
+                output:'stream',
+                parse:true,
+                allow:'multipart/form-data'
             }
         }
     },
