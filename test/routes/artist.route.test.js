@@ -100,7 +100,7 @@ describe('Artist Route Test', function () {
         await artistService.artistRepository().clear();
         await genreService.genreRepository().clear();
         if(server){
-            await server.close();
+            server.close();
         }
     });
 

@@ -101,7 +101,7 @@ describe('User route test', function () {
     afterEach(async () => {
         await userService.userRepository().clear();
         if (server) {
-            await server.close();
+            server.close();
         }
     });
 });

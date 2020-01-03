@@ -36,5 +36,12 @@ export default class SongService {
         await this.songRepository().merge(editableSong, song);
         return await this.songRepository().save(editableSong);
     }
+
+    async findSongsByArtistId(id) {
+        return await this.songRepository()
+            .createQueryBuilder("song")
+            .leftJoinAndSelect("song.artist", "artist")
+            .where(`artist.id = '${id}'`).getMany()
+    }
 }
 

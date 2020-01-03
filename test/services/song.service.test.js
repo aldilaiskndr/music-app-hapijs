@@ -30,7 +30,7 @@ describe('Song Service Test', function () {
         server = await init();
         genre = await genreService.createGenre(genrePayload);
         artistPayload.genre = genre.idGenre;
-        artist = await artistService.createArtist(artistPayload);
+        artist = await artistService.saveArtist(artistPayload);
         await songService.songRepository().clear();
     });
     beforeEach(async ()=>{
@@ -38,7 +38,7 @@ describe('Song Service Test', function () {
     });
     afterEach(async ()=>{
         await songService.songRepository().clear();
-        await server.close();
+        server.close();
     })
     describe('create song', function () {
         it('should return song when created', async function () {

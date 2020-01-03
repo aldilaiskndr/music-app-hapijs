@@ -18,13 +18,16 @@ const user = [
     {
         method: 'GET',
         path: '/users/{id}',
-        handler: async (req, h) => {
-            try {
-                return h.payload = await userService.findById(req.params.id);
-            } catch (e) {
-                throw Boom.notFound(e.message);
+        config: {
+            auth: false,
+            handler: async (req, h) => {
+                try {
+                    return h.payload = await userService.findById(req.params.id);
+                } catch (e) {
+                    throw Boom.notFound(e.message);
+                }
             }
-        }
+        },
     },
     {
         method: 'PUT',
@@ -53,14 +56,17 @@ const user = [
     {
         method: 'delete',
         path: '/users/{id}',
-        handler: async (req, h) => {
-            try {
-                await userService.deleteUser(req.params.id);
-                return h.response({message: 'Success'}).code(200);
-            } catch (e) {
-                return Boom.notFound(e.message);
+        config:{
+            auth:false,
+            handler: async (req, h) => {
+                try {
+                    await userService.deleteUser(req.params.id);
+                    return h.response({message: 'Success'}).code(200);
+                } catch (e) {
+                    return Boom.notFound(e.message);
+                }
             }
-        }
+        },
     },
 ];
 

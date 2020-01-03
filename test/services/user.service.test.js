@@ -27,7 +27,7 @@ describe('User Service Test', function () {
     afterEach(async () => {
         await userService.userRepository().clear();
         if (server) {
-            await server.close();
+            server.close();
         }
     });
     describe('create user', function () {

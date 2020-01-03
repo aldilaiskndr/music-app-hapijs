@@ -4,6 +4,7 @@ import Hapi from "@hapi/hapi";
 import createDBConnection from "./database/connection";
 import configure from "./config";
 import routes from "./routes";
+import {validate} from "./auth/user.validate";
 
 process.on('unhandledRejection', (err) => {
     console.log(err);
@@ -17,9 +18,23 @@ export default async () => {
         port: process.env.APP_PORT,
         host: process.env.APP_HOST
     });
-    // await server.register(require("@hapi/basic"));
-    // server.auth.strategy('loginduludong', 'basic', { validate });
-    // server.auth.default('loginduludong');
+
+    await server.register(require('@hapi/cookie'));
+    server.auth.strategy('session', 'cookie', {
+        cookie: {
+            name: 'sid-example',
+            password: '!wsYhFA*C2U6nz=Bu^%A@^F#SF3&kSR6',
+            isSecure: false
+        },
+        redirectTo: '/login',
+        validateFunc: async (request, session) => {
+            console.log(session, "ini session");
+            return validate(request, session.username, session.password);
+        }
+    });
+
+    server.auth.default('session');
+
     server.route(routes);
     server.route({
         method: 'GET',
@@ -28,6 +43,7 @@ export default async () => {
             return 'Hello World!';
         }
     });
+
     if (connection.isConnected) {
         await server.start();
         console.log(`Connected to ${process.env.DB_DRIVER} database at ${process.env.DB_HOST}`);
@@ -36,5 +52,5 @@ export default async () => {
         console.log(`error`);
     }
 
-    return server.listener;
+    // return server.listener;
 }

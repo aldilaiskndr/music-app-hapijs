@@ -29,6 +29,19 @@ const song = [
         }
     },
     {
+        method: GET,
+        path: PATH_SONG_API+'/artist/{id}',
+        config: {
+            handler: async (req, h)=>{
+                try {
+                    return h.payload = await songService.findSongsByArtistId(req.params.id);
+                }catch (error) {
+                    throw Boom.notFound(error.message);
+                }
+            }
+        }
+    },
+    {
         method:PUT,
         path:PATH_SONG_API,
         config:{
@@ -72,3 +85,5 @@ const song = [
         }
     }
 ];
+
+export default song;

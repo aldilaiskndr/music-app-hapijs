@@ -1,15 +1,20 @@
-import {GenreService} from '../../src/services';
+import {GenreService, UserService} from '../../src/services';
 import request from 'supertest';
 import init from '../../src/api'
 import {PATH_GENRE_API} from "../../src/constant/path.constant";
 
 let server;
 let genreService = new GenreService();
+let userService = new UserService();
 let payload = {
     genreName:'Pop'
 };
 let payload2 = {
     genreName:'Rock'
+};
+let user = {
+    username: 'aldilaisk',
+    password :'password'
 };
 const ok = 200;
 const created = 201;
@@ -19,6 +24,8 @@ const expectedErrorMessage = {message: "Sorry, Genre Not Found", status: 404};
 describe('Genre Route Test', function () {
     beforeAll(async ()=>{
         server = await init();
+        await userService.create(user);
+        await request(server).post('/login').send(user);
         await genreService.genreRepository().clear();
     });
     beforeEach(async ()=>{
@@ -126,7 +133,7 @@ describe('Genre Route Test', function () {
     afterEach(async ()=>{
         await genreService.genreRepository().clear();
         if(server){
-            await server.close();
+            server.close();
         }
     })
 });

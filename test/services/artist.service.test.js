@@ -35,15 +35,15 @@ describe('Artist Service Test', function () {
         await artistService.artistRepository().clear();
         await genreService.genreRepository().clear();
         if(server){
-            await server.close();
+            server.close();
         }
     });
 
-    describe('create artist', function () {
+    describe('save artist', function () {
         it('should return artist when created', async function () {
             payload.genre = genrePayload.idGenre;
             console.log(payload);
-            let artist = await artistService.createArtist(payload);
+            let artist = await artistService.saveArtist(payload);
             expect(artist).toMatchObject(payload);
         });
     });
@@ -51,8 +51,8 @@ describe('Artist Service Test', function () {
         it('should return 2 artist when 2 data is exist in db', async function () {
             payload.genre = genrePayload.idGenre;
             payload2.genre = genrePayload.idGenre;
-            await artistService.createArtist(payload);
-            await artistService.createArtist(payload2);
+            await artistService.saveArtist(payload);
+            await artistService.saveArtist(payload2);
 
             const result = await artistService.findAll();
 
@@ -63,7 +63,7 @@ describe('Artist Service Test', function () {
         it('should return one artist when founded', async function () {
             payload.genre = genrePayload.idGenre;
 
-            const artist = await artistService.createArtist(payload);
+            const artist = await artistService.saveArtist(payload);
 
             const result = await artistService.findById(artist.id);
 
@@ -73,7 +73,7 @@ describe('Artist Service Test', function () {
     describe('update artist', function () {
         it('should return new data of artist when updated', async function () {
             payload.genre = genrePayload.idGenre;
-            const artist = await artistService.createArtist(payload);
+            const artist = await artistService.saveArtist(payload);
             artist.name = 'Ari Untung';
             const newArtist = await artistService.updateArtist(artist);
             expect(newArtist).toMatchObject(artist);
@@ -82,7 +82,7 @@ describe('Artist Service Test', function () {
     describe('delete artist by id', function () {
         it('should delete 1 data in db', async function () {
             payload.genre = genrePayload.idGenre;
-            const artist = await artistService.createArtist(payload);
+            const artist = await artistService.saveArtist(payload);
             await artistService.deleteArtist(artist.id);
             expect(await artistService.findAll()).toHaveLength(0);
         });

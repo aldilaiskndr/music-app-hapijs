@@ -25,7 +25,7 @@ describe('Genre Service', function () {
     afterEach(async () => {
         await genreService.genreRepository().clear();
         if (server) {
-            await server.close();
+            server.close();
         }
     });
     describe('create genre', function () {

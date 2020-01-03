@@ -1,18 +1,15 @@
 import {UserService} from "../services";
 
 const userService = new UserService();
-export const validate = async (req, username, password) => {
 
+export async function validate(req, username, password){
+    console.log(username);
     const user = await userService.findByUserName(username);
-    console.log(user);
+    console.log(user,"ANU");
     if (!user) {
-        return {credentials: null, isValid: false};
+        return {credentials: null, valid: false};
     }
 
-    const isValid = await userService.validatePassword(password, user.password);
-    const credentials = {id: user.id, name: user.username};
-    const buff = await Buffer.from(req.headers.authorization[1]);
-    console.log(await buff.toString(), 'ini');
-    console.log(isValid, credentials);
-    return {isValid, credentials};
-};
+    const valid = await userService.validatePassword(password, user.password);
+    return {valid:valid, credentials:{...user, password:password}};
+}

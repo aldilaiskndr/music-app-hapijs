@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/routes/artist.route.js</title>
+    <title>Code coverage report for src/routes/song.routes.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="..\..\prettify.css" />
     <link rel="stylesheet" href="..\..\base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\..\index.html">All files</a> / <a href="index.html">src/routes</a> artist.route.js
+      <a href="..\..\index.html">All files</a> / <a href="index.html">src/routes</a> song.routes.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">8% </span>
+        <span class="strong">9.09% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/25</span>
+        <span class='fraction'>2/22</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">8% </span>
+        <span class="strong">9.09% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/25</span>
+        <span class='fraction'>2/22</span>
       </div>
     </div>
     <p class="quiet">
@@ -135,17 +135,13 @@
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
 <a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L90'></a><a href='#L90'>90</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -186,20 +182,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -226,7 +215,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -234,30 +222,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Boom from '@hapi/boom';
-import {ArtistService} from "../services";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {SongService} from '../services';
+import Boom from '@hapi/boom';
 import {DELETE, GET, POST, PUT} from "../constant/method.constant";
-import {PATH_ARTIST_API} from "../constant/path.constant";
+import {PATH_SONG_API} from "../constant/path.constant";
 &nbsp;
-const artistService = new ArtistService();
-const artist = [
+const songService = new SongService();
+&nbsp;
+const song = [
     {
-        method: GET,
-        path: PATH_ARTIST_API,
-        config: {
-            handler: <span class="fstat-no" title="function not covered" >as</span>ync (req, h) =&gt; {
-<span class="cstat-no" title="statement not covered" >                return h.payload = await artistService.findAll();</span>
+        method:GET,
+        path:PATH_SONG_API,
+        config:{
+            handler: <span class="fstat-no" title="function not covered" >as</span>ync (req, h)=&gt;{
+<span class="cstat-no" title="statement not covered" >                return h.payload = await songService.findAll();</span>
             }
         }
     },
     {
         method: GET,
-        path: PATH_ARTIST_API + '/{id}',
+        path: PATH_SONG_API+'/{id}',
         config: {
-            handler: <span class="fstat-no" title="function not covered" >as</span>ync (req, h) =&gt; {
+            handler: <span class="fstat-no" title="function not covered" >as</span>ync (req, h)=&gt;{
 <span class="cstat-no" title="statement not covered" >                try {</span>
-<span class="cstat-no" title="statement not covered" >                    return h.payload = await artistService.findById(req.params.id);</span>
-                } catch (error) {
+<span class="cstat-no" title="statement not covered" >                    return h.payload = await songService.findById(req.params.id);</span>
+                }catch (error) {
 <span class="cstat-no" title="statement not covered" >                    throw Boom.notFound(error.message);</span>
                 }
             }
@@ -265,70 +256,64 @@ const artist = [
     },
     {
         method: GET,
-        path: PATH_ARTIST_API + '/genre/{id}',
+        path: PATH_SONG_API+'/artist/{id}',
         config: {
-            handler: <span class="fstat-no" title="function not covered" >as</span>ync (req, h) =&gt; {
+            handler: <span class="fstat-no" title="function not covered" >as</span>ync (req, h)=&gt;{
 <span class="cstat-no" title="statement not covered" >                try {</span>
-<span class="cstat-no" title="statement not covered" >                    return h.payload = await artistService.findArtistByIdGenre(req.params.id);</span>
-                } catch (error) {
+<span class="cstat-no" title="statement not covered" >                    return h.payload = await songService.findSongsByArtistId(req.params.id);</span>
+                }catch (error) {
 <span class="cstat-no" title="statement not covered" >                    throw Boom.notFound(error.message);</span>
                 }
             }
         }
     },
     {
-        method: PUT,
-        path: PATH_ARTIST_API,
-        handler: <span class="fstat-no" title="function not covered" >as</span>ync (req, h) =&gt; {
-            let artist = <span class="cstat-no" title="statement not covered" >req.payload.artist;</span>
-            let image = <span class="cstat-no" title="statement not covered" >req.payload.image;</span>
-<span class="cstat-no" title="statement not covered" >            console.log(artist);</span>
-<span class="cstat-no" title="statement not covered" >            try {</span>
-<span class="cstat-no" title="statement not covered" >                artist = await artistService.createArtist(JSON.parse(artist), image);</span>
-<span class="cstat-no" title="statement not covered" >                return h.response(artist).code(201);</span>
-            } catch (e) {
-<span class="cstat-no" title="statement not covered" >                throw Boom.notFound(e.message);</span>
-            }
-        },
-        options:{
-            payload:{
-                output:'stream',
-                parse:true,
-                allow:'multipart/form-data'
+        method:PUT,
+        path:PATH_SONG_API,
+        config:{
+            handler:<span class="fstat-no" title="function not covered" >as</span>ync (req, h)=&gt;{
+                let song = <span class="cstat-no" title="statement not covered" >req.payload;</span>
+<span class="cstat-no" title="statement not covered" >                try {</span>
+<span class="cstat-no" title="statement not covered" >                    song = await songService.createSong(song);</span>
+<span class="cstat-no" title="statement not covered" >                    return h.response(song).code(201);</span>
+                }catch (e) {
+<span class="cstat-no" title="statement not covered" >                    throw Boom.notFound(e.message);</span>
+                }
             }
         }
     },
     {
-        method: POST,
-        path: PATH_ARTIST_API,
-        config: {
-            handler: <span class="fstat-no" title="function not covered" >as</span>ync (req, h) =&gt; {
-                let newDataArtist = <span class="cstat-no" title="statement not covered" >req.payload;</span>
+        method:POST,
+        path:PATH_SONG_API,
+        config:{
+            handler:<span class="fstat-no" title="function not covered" >as</span>ync (req, h)=&gt;{
+                let song = <span class="cstat-no" title="statement not covered" >req.payload;</span>
 <span class="cstat-no" title="statement not covered" >                try {</span>
-<span class="cstat-no" title="statement not covered" >                    newDataArtist = await artistService.updateArtist(newDataArtist);</span>
-<span class="cstat-no" title="statement not covered" >                    return h.response(newDataArtist).code(201);</span>
-                } catch (error) {
+<span class="cstat-no" title="statement not covered" >                    song = await songService.updateSong(song);</span>
+<span class="cstat-no" title="statement not covered" >                    return h.response(song).code(201);</span>
+                }catch (error) {
 <span class="cstat-no" title="statement not covered" >                    throw Boom.notFound(error.message);</span>
                 }
             }
         }
     },
     {
-        method: DELETE,
-        path: PATH_ARTIST_API + '/{id}',
-        config: {
-            handler: <span class="fstat-no" title="function not covered" >as</span>ync (req, h) =&gt; {
+        method:DELETE,
+        path:PATH_SONG_API+'/{id}',
+        config:{
+            handler: <span class="fstat-no" title="function not covered" >as</span>ync (req, h)=&gt;{
 <span class="cstat-no" title="statement not covered" >                try {</span>
-<span class="cstat-no" title="statement not covered" >                    await artistService.deleteArtist(req.params.id);</span>
-<span class="cstat-no" title="statement not covered" >                    return h.response({message: 'Delete Artist Success'}).code(200);</span>
-                } catch (error) {
+<span class="cstat-no" title="statement not covered" >                    return h.payload = await songService.deleteById(req.params.id);</span>
+                }catch (error) {
 <span class="cstat-no" title="statement not covered" >                    throw Boom.notFound(error.message);</span>
                 }
             }
         }
     }
 ];
-export default artist;</pre></td></tr>
+&nbsp;
+export default song;
+&nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
