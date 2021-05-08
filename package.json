@@ -28,7 +28,7 @@
     "hapi": "^18.1.0",
     "pg": "^7.17.0",
     "supertest": "^4.0.2",
-    "typeorm": "^0.2.22",
+    "typeorm": "^0.2.25",
     "@hapi/cookie": "latest"
   },
   "devDependencies": {
